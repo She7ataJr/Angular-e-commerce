@@ -1,0 +1,98 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="rounded shadow vstack gap-3 p-3 ">
+
+            <div class="form-floating">
+                <input type="text" class="form-control" 
+                [ngClass]="{
+                    'is-valid':!name?.errors &&
+                    name?.dirty,
+                    'is-invalid':name?.errors && 
+                    name?.dirty
+                }"
+                formControlName="name" >
+                <label for="name">user Name</label>
+                <!-- <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                    <li *ngIf="name?.getError('required')">Required field</li>
+                    <li *ngIf="name?.getError('minlength')">minimum length 4 characters</li>
+                    <li *ngIf="name?.getError('maxlength')">maximum length 12 characters</li>
+                    <li *ngIf="name?.getError('pattern')">invalid format</li>
+
+                </ul> -->
+                <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                    <li *ngIf="name?.getError('required')">Required field</li>
+                    <li *ngIf="name?.getError('minlength')">minimum length 4 characters </li>
+                    <li *ngIf="name?.getError('maxlength')">maximum length 8 characters</li>
+
+                </ul>
+            </div>
+        
+
+        <div class="form-floating ">
+            <div class="form-floating">
+                <input type="text" class="form-control" 
+                [ngClass]="{
+                    'is-valid':!email?.errors &&
+                    email?.dirty,
+                    'is-invalid':email?.errors && 
+                    email?.dirty
+                }"
+                formControlName="email" placeholder=" ">
+                <label for="email">E-mail</label>
+                <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                    <li *ngIf="email?.getError('required')">Required field</li>
+                    <li *ngIf="email?.getError('pattern')">Error Email format</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" class="form-control" formControlName="password" placeholder=" "
+            [ngClass]="{
+                'is-valid':!password?.errors &&
+                password?.dirty,
+                'is-invalid':password?.errors && 
+                password?.dirty
+            }">
+            <label for="password">password</label>
+            <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                <li *ngIf="password?.getError('required')">Required field</li>
+                <li *ngIf="password?.getError('minlength')">minimum length 4 characters and maximum length 8 characters</li>
+            </ul>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" class="form-control" formControlName="rePassword" placeholder=" "
+            [ngClass]="{
+                'is-valid':!rePassword?.errors &&
+                rePassword?.dirty,
+                'is-invalid':rePassword?.errors && 
+                rePassword?.dirty
+            }">
+            <label for="rePassword">rePassword</label>
+            <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+              
+                <li *ngIf="rePassword?.getError('notMatch')">Dose not match</li>
+            </ul>
+        </div>
+        
+
+
+        <div class="form-floating">
+            <input type="tel" class="form-control" formControlName="phone" placeholder=" "
+            [ngClass]="{
+                'is-valid':!phone?.errors &&
+                phone?.dirty,
+                'is-invalid':phone?.errors && 
+                phone?.dirty
+            }">
+            <label for="phone">phone</label>
+            <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                <li *ngIf="phone?.getError('required')">Required field</li>
+                <li *ngIf="phone?.getError('pattern')">Enter valid phone-number </li>
+           
+
+            </ul>
+        </div>
+            <button type="submit" [disabled]="registerForm.invalid" class="btn bg-main text-white d-block ms-auto ">Register</button>
+    </form>
+</div>

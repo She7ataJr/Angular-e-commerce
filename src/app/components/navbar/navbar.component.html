@@ -1,0 +1,50 @@
+<div class="w-100 m-auto bg-light">
+    <div class="container">
+     <nav class="navbar m-auto navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" routerLink="home">
+            <img src="../../../assets/images/logo.svg" alt="Logo of brand">
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse align-items-center " id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mt-2 mt-lg-0 " *ngIf="_AuthService.userToken">
+             <li class="nav-item">
+               <a class="nav-link" routerLink="home" routerLinkActive="active" >Home</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" routerLink="cart" routerLinkActive="active">cart</a>
+               </li>
+             <li class="nav-item">
+                 <a class="nav-link" routerLink="products" routerLinkActive="active">products</a>
+               </li>
+             <li class="nav-item ">
+                 <a class="nav-link" routerLink="categories" routerLinkActive="active">categories</a>
+               </li>
+           </ul>
+           <ul class="navbar-nav ms-auto mt-2 mt-lg-0 ">
+                <li class="nav-item ">
+                    <i class="fab fa-instagram mx-2"></i>
+                    <i class="fa-brands fa-facebook-f mx-2"></i>
+                    <i class="fab fa-tiktok mx-2"></i>
+                    <i class="fab fa-twitter mx-2"></i>
+                    <i class="fab fa-youtube mx-2"></i>
+                    <i class="fab fa-linkedin mx-2"></i>
+                </li>
+           </ul>
+           <ul class="d-flex list-unstyled mt-3">
+                <li class="mx-2" *ngIf="!_AuthService.userToken">
+                    <a routerLink="register" class="nav-link" routerLinkActive="active">Register</a>
+                </li>
+                <li class="mx-2" *ngIf="!_AuthService.userToken">
+                    <a routerLink="login" class="nav-link" routerLinkActive="active">login</a>
+                </li>
+                <li *ngIf="_AuthService.userToken" class="mx-2">
+                    <a (click)="_AuthService.logOut()" class="cursor-pointer">logout</a>
+                </li>
+           </ul>
+         </div>
+       </nav>
+    </div>
+ </div>
+ 
