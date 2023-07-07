@@ -2,28 +2,23 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()" class="rounded shadow vstack gap-3 p-3 ">
 
             <div class="form-floating">
-                <input type="text" class="form-control" 
-                [ngClass]="{
-                    'is-valid':!name?.errors &&
-                    name?.dirty,
-                    'is-invalid':name?.errors && 
-                    name?.dirty
-                }"
-                formControlName="name" >
-                <label for="name">user Name</label>
-                <!-- <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
-                    <li *ngIf="name?.getError('required')">Required field</li>
-                    <li *ngIf="name?.getError('minlength')">minimum length 4 characters</li>
-                    <li *ngIf="name?.getError('maxlength')">maximum length 12 characters</li>
-                    <li *ngIf="name?.getError('pattern')">invalid format</li>
-
-                </ul> -->
-                <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
-                    <li *ngIf="name?.getError('required')">Required field</li>
-                    <li *ngIf="name?.getError('minlength')">minimum length 4 characters </li>
-                    <li *ngIf="name?.getError('maxlength')">maximum length 8 characters</li>
-
-                </ul>
+                <div class="form-floating">
+                    <input type="text" class="form-control" 
+                    [ngClass]="{
+                        'is-valid':!name?.errors &&
+                        name?.dirty,
+                        'is-invalid':name?.errors && 
+                        name?.dirty
+                    }"
+                    formControlName="name" >
+                    <label for="name">Name</label>
+                    <ul class="list-unstyled alert alert-danger p-1 small invalid-feedback  ">
+                        <li *ngIf="name?.getError('required')">Required field</li>
+                        <li *ngIf="name?.getError('minlength')">minimum length 4 characters </li>
+                        <li *ngIf="name?.getError('maxlength')">maximum length 8 characters</li>
+    
+                    </ul>
+                </div>
             </div>
         
 
