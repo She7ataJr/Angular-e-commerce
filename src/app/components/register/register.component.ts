@@ -11,7 +11,11 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class RegisterComponent {
 
   
-  constructor(private _fb:FormBuilder,private _AuthService:AuthService, private _Router:Router){}
+  constructor(private _fb:FormBuilder,private _AuthService:AuthService, private _Router:Router){
+    if(localStorage.getItem('token')!= null){
+      _Router.navigate(['/home'])
+    }
+  }
 
   
   customValidation=(group:AbstractControl)=>{

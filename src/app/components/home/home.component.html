@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="row">
+    <div *ngFor="let product of products" class="col-lg-3 col-md-3 .col-sm-6">
+        <div class="product p-3 overflow-hidden ">
+            <img [src]='product.imageCover' class="w-100" alt="">
+            <h6 class="text-main">{{product.category.name}}</h6>
+            <h6>{{product.title.split('').slice(0.2).join(' ')}}</h6>
+            <div class="d-flex justify-content-between align-items-center ">
+                <p>{{product.price}}</p>
+                <p><span><i class="fa-regular fa-star rating-color"></i></span>{{product.ratingsAverage}}</p>
+            </div>
+            <button class="btn text-white m-auto d-block bg-main">add to cart</button>
+        </div>
+    </div>
+</div>

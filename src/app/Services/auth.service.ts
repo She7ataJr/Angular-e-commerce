@@ -12,7 +12,11 @@ export class AuthService {
   baseUrl:string="https://route-ecommerce.onrender.com"
   userToken :any
 
-  constructor(private _HttpClient:HttpClient ,private _Router:Router) { }
+  constructor(private _HttpClient:HttpClient ,private _Router:Router) {
+   if(localStorage.getItem('token')!= null){
+     this.userToken = localStorage.getItem('token')
+   }
+   }
   registerHandle(registerForm:RegisterForm):Observable<any>{
    return this._HttpClient.post(this.baseUrl+'/api/v1/auth/signup',registerForm)
   }

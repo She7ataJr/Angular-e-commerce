@@ -9,17 +9,18 @@ import { BrandsComponent } from './components/brands/brands.component';
 import { CartComponent } from './components/cart/cart.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import {AuthGuard}from './Guards/auth.guard'
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
+  {path:'home',canActivate:[AuthGuard],component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'products',component:ProductsComponent},
-  {path:'product',component:ProductDetailsComponent},
-  {path:'categories',component:CategoriesComponent},
-  {path:'brands',component:BrandsComponent},
-  {path:'cart',component:CartComponent},
+  {path:'products',canActivate:[AuthGuard],component:ProductsComponent},
+  {path:'product',canActivate:[AuthGuard],component:ProductDetailsComponent},
+  {path:'categories',canActivate:[AuthGuard],component:CategoriesComponent},
+  {path:'brands',canActivate:[AuthGuard],component:BrandsComponent},
+  {path:'cart',canActivate:[AuthGuard],component:CartComponent},
   {path:'**',component:NotFoundComponent}
 ];
 
