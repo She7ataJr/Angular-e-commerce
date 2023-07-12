@@ -1,1 +1,8 @@
-<p>categories works!</p>
+<div class="row">
+    <div class="col-md-4" *ngFor="let category of categories">
+        <div class="category">
+            <img style="height: 350px;" class="w-100" [src]="category?.image"  routerLink="home" >
+            <h4>{{category?.name}}</h4>
+        </div>
+    </div>
+</div>

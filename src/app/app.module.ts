@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CarouselModule } from 'ngx-owl-carousel-o'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrandsComponent } from './components/brands/brands.component';
@@ -14,9 +14,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import {ProductComponent}from './components/product/product.component'
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
-
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +31,16 @@ import {HttpClientModule} from '@angular/common/http'
     NotFoundComponent,
     ProductsComponent,
     RegisterComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

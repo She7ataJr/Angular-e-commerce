@@ -29,7 +29,7 @@ a {
 }
 .product:hover {
   box-shadow: var(--shadow);
-  border: solid 1px var(--main-color);
+  /* border: solid 1px var(--main-color); */
 }
 .product .btn {
   transition: transform 0.3s, opacity 0.3s;
@@ -39,6 +39,10 @@ a {
 .product:hover .btn {
   opacity: 1;
   transform: translateY(0%);
+}
+i:hover{
+  color: var(--main-color);
+  cursor: pointer;
 }
 .font-sm {
   font-size: 14px;
