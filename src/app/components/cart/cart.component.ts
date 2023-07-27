@@ -23,8 +23,8 @@ export class CartComponent implements OnInit {
         },
         complete:()=> {
           
-        },
-      },
+        }
+      }
     )
   }
 

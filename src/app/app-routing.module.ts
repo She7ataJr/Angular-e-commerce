@@ -21,6 +21,7 @@ const routes: Routes = [
   {path:'categories',canActivate:[AuthGuard],component:CategoriesComponent},
   {path:'brands',canActivate:[AuthGuard],component:BrandsComponent},
   {path:'cart',canActivate:[AuthGuard],component:CartComponent},
+  {path:'settings',loadChildren:()=>import('././settings/settings.module').then((module)=>module.SettingsModule)},
   {path:'**',component:NotFoundComponent}
 ];
 

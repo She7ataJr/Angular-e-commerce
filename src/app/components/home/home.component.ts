@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  searchTerm:string=''
   products:any [] = []
   constructor(private _AuthService:AuthService,private _Router:Router, private _ProductsService:ProductsService){
     if(localStorage.getItem('token') == null){

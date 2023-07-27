@@ -40,6 +40,9 @@
                     <a routerLink="login" class="nav-link" routerLinkActive="active">login</a>
                 </li>
                 <li *ngIf="_AuthService.userToken" class="mx-2">
+                  <a  class="cursor-pointer" routerLink="/settings">Settings</a>
+              </li>
+                <li *ngIf="_AuthService.userToken" class="mx-2">
                     <a (click)="_AuthService.logOut()" class="cursor-pointer">logout</a>
                 </li>
            </ul>

@@ -15,9 +15,12 @@ import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import {ProductComponent}from './components/product/product.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SeemorePipe } from './pipes/seemore.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+import { SettingsModule } from './settings/settings.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     ProductsComponent,
     RegisterComponent,
     ProductDetailsComponent,
-    ProductComponent
+    ProductComponent,
+    SeemorePipe,
+    SearchPipe,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    SettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

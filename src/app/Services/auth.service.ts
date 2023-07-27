@@ -23,9 +23,9 @@ export class AuthService {
   loginHandle(LoginForm:LoginForm):Observable<any>{
     return this._HttpClient.post(this.baseUrl+'/api/v1/auth/signin',LoginForm)
    }
-   logOut(){
+  logOut(){
     localStorage.removeItem('token')
     this.userToken=""
     this._Router.navigate(['/login'])
-   }
+  }
 }
