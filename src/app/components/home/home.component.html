@@ -17,6 +17,6 @@
         <input type="text" [(ngModel)]="searchTerm" class="w-75 form-control my-5 m-auto " placeholder="Search ">
     </div> 
     <div *ngFor="let product of products | search:searchTerm" class="col-lg-3 col-md-3 .col-sm-6">
-        <app-product [product]="product" [routerLink]="'/product/'+product.id"></app-product>
+        <app-product [product]="product" ></app-product>
     </div>
 </div>

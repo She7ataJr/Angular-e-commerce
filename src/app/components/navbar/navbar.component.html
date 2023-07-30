@@ -13,9 +13,6 @@
                <a class="nav-link" routerLink="home" routerLinkActive="active" >Home</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" routerLink="cart" routerLinkActive="active">cart</a>
-               </li>
-             <li class="nav-item">
                  <a class="nav-link" routerLink="products" routerLinkActive="active">products</a>
                </li>
              <li class="nav-item ">
@@ -42,8 +39,15 @@
                 <li *ngIf="_AuthService.userToken" class="mx-2">
                   <a  class="cursor-pointer" routerLink="/settings">Settings</a>
               </li>
+              <li *ngIf="_AuthService.userToken" class="nav-item">
+                <a class="nav-link position-relative " routerLink="cart" routerLinkActive="active">
+                  <i class="fas fa-shopping-cart fa-lg text-main fs-4  p-3"></i>
+                  <span class="badge bg-main position-absolute top-0 end-0 ">{{numOfCartItems}}</span>
+                </a>
+              </li>
                 <li *ngIf="_AuthService.userToken" class="mx-2">
                     <a (click)="_AuthService.logOut()" class="cursor-pointer">logout</a>
+                    
                 </li>
            </ul>
          </div>

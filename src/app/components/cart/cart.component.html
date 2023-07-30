@@ -1,7 +1,7 @@
 <div class="container">
     <div class="head-comp d-flex justify-content-between ">
         <h3>Your cart </h3>
-        <button class="btn btn-outline-danger" (click)="clearCart()">Clear Cart</button>
+        <button class="btn btn-outline-danger" (click)="deleteAll()">Clear Cart</button>
     </div>
         <div *ngFor="let cartProduct of cartProducts" class="row shadow-sm p-3">
             <div class="col-sm-2">

@@ -48,14 +48,18 @@ export class CartComponent implements OnInit {
 
   removeCartItem(productId:string){
     this._productsService.removeCartItem(productId).subscribe((response)=>{
-      console.log(response)
+     
       this.cartProducts=response.data.products;
+      this._productsService.numOfCartItems.next(response.numOfCartItems)
     })
   }
   
-  clearCart(){
+  deleteAll(){
     this._productsService.clearCart().subscribe((response)=>{
-      console.log(response)
+      this.cartProducts=response.data
+      this._productsService.numOfCartItems.next(0)
+
+      console.log(response);
       
     })
   }

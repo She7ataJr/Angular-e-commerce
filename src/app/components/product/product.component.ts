@@ -12,7 +12,10 @@ export class ProductComponent {
   constructor(private _productsService:ProductsService,){}
 
   addProduct(productId:string){
-    this._productsService.addProductToCart(productId).subscribe((response)=>console.log(response)
+    this._productsService.addProductToCart(productId).subscribe((response)=>{
+      console.log(response)
+      this._productsService.numOfCartItems.next(response.numOfCartItems)
+    }
     )
   }
 }
