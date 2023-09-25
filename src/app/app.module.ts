@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CarouselModule } from 'ngx-owl-carousel-o'
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrandsComponent } from './components/brands/brands.component';
@@ -14,13 +14,15 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import {ProductComponent}from './components/product/product.component'
+import { ProductComponent } from './components/product/product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SeemorePipe } from './pipes/seemore.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { SettingsModule } from './settings/settings.module';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+// import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,20 +40,22 @@ import { SettingsModule } from './settings/settings.module';
     ProductComponent,
     SeemorePipe,
     SearchPipe,
-
-    
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAsCtg2_WTmiGjj9eW6xqPv7OS6y1Mseas' 
+    // }),
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
-    SettingsModule
-  ],
+    SettingsModule,
+    ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -12,9 +12,7 @@ export class NavbarComponent {
   constructor(public _AuthService:AuthService, private _productService:ProductsService){
     _productService.numOfCartItems.subscribe({
       next:(value)=>{
-        console.log(value);
-        
-        this.numOfCartItems=value    
+          this.numOfCartItems=value    
       }
     })
   }
